@@ -1,0 +1,20 @@
+{
+  "name": "responsive-animated-content-website-withoutanyexternallibrary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass --watch _dev/styles/main.sass public/src/styles/main.css",
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.39.0",
+    "vite": "^4.0.4"
+  },
+  "dependencies": {
+    "sal.js": "^0.8.5"
+  }
+}

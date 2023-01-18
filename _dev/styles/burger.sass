@@ -1,0 +1,40 @@
+@import ./colors
+
+#btn-burger
+	width: 60px
+	height: 60px
+	background: transparent
+	border: none
+	display: grid
+	align-items: center
+	justify-content: center
+	position: relative
+	z-index: 105
+
+	> span
+		width: 30px
+		height: 4px
+		background: $color-primary-light
+		transition: transform .5s ease-in-out
+
+		&::before,
+		&::after
+			content: ''
+			position: absolute
+			width: 30px
+			height: 4px
+			background: $color-primary-light
+			transition: transform .5s ease-in-out
+		&::before
+			transform: translateY(-10px) translateX(-15px)
+
+		&::after
+			transform: translateY(10px) translateX(-15px)
+
+	&.active
+		> span
+			&::before
+				transform: translateY(0) translateX(-15px)
+
+			&::after
+				transform: translateY(0) translateX(-15px)

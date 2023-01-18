@@ -1,0 +1,90 @@
+@import ./colors
+
+#monitor-nav
+	position: fixed
+	right: -25rem
+	top: 0
+	width: 25rem
+	height: 100%
+	background: $bg-primary-dark
+	display: flex
+	justify-content: center
+	align-items: center
+	z-index: 100
+	transition: right .3s ease-in-out
+
+	&.active
+		right: 0
+
+	ul
+		position: relative
+		display: flex
+		flex-direction: column
+
+	li
+		list-style: none
+		margin: .3rem 0
+
+	a
+		color: $color-primary-light
+		font-size: 1.8rem
+		font-weight: 400
+		text-decoration: none
+		text-transform: capitalize
+		position: relative
+		transition: color 300ms ease-out
+
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			height: 2px
+			width: 0
+			background: $color-primary-light-highlight
+			bottom: 0
+			transition: width 300ms ease-out
+
+		&:hover
+			color: $color-primary-light-highlight
+
+			&::before
+				width: 100%
+
+#phone-nav
+	background: $bg-primary-darker
+	border-top: thin solid $color-primary-light-highlight
+	width: 100%
+	height: 100%
+	display: flex
+	flex-flow: row
+	justify-content: space-around
+	padding: .12rem 0 .14rem 0
+
+	a
+		flex: 1
+		font-size: .65rem
+		display: grid
+		font-weight: 400
+		grid-template-columns: 1fr
+		grid-template-rows: 1fr .8rem
+		align-items: center
+		justify-content: center
+		color: $color-primary-light
+		text-decoration: none
+		text-transform: capitalize
+		height: calc( 100% + 1rem )
+		transition: height .3s ease-in-out, color .3s ease-in-out
+
+		span
+			align-self: center
+			justify-self: center
+
+		&.active
+			height: 100%
+			color: $color-primary-light-highlight
+
+	svg
+		align-self: center
+		justify-self: center
+		width: 1.8rem
+		height: 1.8rem

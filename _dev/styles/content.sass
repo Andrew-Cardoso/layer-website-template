@@ -1,0 +1,342 @@
+@import ./colors
+
+h2
+	position: relative
+	color: $color-primary-light
+	font-size: 1.8rem
+	font-weight: 600
+	letter-spacing: 1px
+	margin-bottom: .4rem
+
+p
+	position: relative
+	color: $color-primary-light
+	font-size: 1rem
+	font-weight: 300
+	letter-spacing: 1px
+	text-align: justify
+
+#about
+	min-height: 100vh
+	position: relative
+	width: 100%
+	background: $bg-primary-dark
+	display: flex
+
+	article
+		padding: 6.25rem
+		width: 50%
+		align-self: center
+
+		// margin-bottom: .4rem
+
+	.img-about
+		position: relative
+		width: 50%
+		background-image: url('../../images/lawyer.jpg')
+		background-size: cover
+
+#services
+	min-height: 100vh
+	position: relative
+	background: $bg-primary-darker
+	text-align: center
+	padding: 6.25rem
+
+	.container
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-wrap: wrap
+		margin-top: 4rem
+
+	.service-box
+		background: $color-primary-light
+		width: 500px
+		height: 650px
+		display: flex
+		justify-content: center
+		align-items: center
+		padding: 10rem
+
+		h2
+			font-size: 2rem
+			font-weight: 700
+			letter-spacing: 1px
+			color: $color-primary-dark
+
+	svg
+		width: 100%
+		height: auto
+
+#info
+	min-height: 100vh
+	position: relative
+	background: $bg-primary-dark
+	text-align: center
+	padding: 6.25rem
+	display: grid
+	grid-template-columns: 1fr .25fr
+	gap: 2rem
+	align-items: center
+
+	p:not(:first-of-type)
+		margin-top: 1rem
+
+	ul
+		filter: invert(1)
+		list-style: url('../../images/gavel.png')
+		margin-top: 1rem
+		list-style-position: inside
+		text-align: left
+		color: #000
+
+		li
+			margin-top: 1rem
+			margin-left: 1rem
+
+	h2:last-of-type
+		text-align: left
+		margin-top: 2rem
+		font-size: 1.2rem
+
+#contact
+	min-height: 100vh
+	position: relative
+	background: $bg-primary-darker
+	text-align: center
+	padding: 6.25rem
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-flow: column
+	row-gap: 2rem
+
+	article
+		width: 100%
+		max-width: 700px
+		padding: 2rem 0
+
+		a
+			background: transparent
+			text-decoration: none
+			border: none
+			color: $color-primary-light
+			padding: 1rem
+			filter: grayscale(1)
+			transition: filter .3s ease-out
+
+			&:hover
+				filter: grayscale(0)
+
+		.action
+			display: flex
+			align-items: center
+			justify-content: center
+			flex-flow: row
+			gap: 1rem
+
+	form
+		width: 100%
+		max-width: 700px
+
+		> div
+			margin-bottom: 1.5rem
+			color: $color-primary-light
+			position: relative
+			height: 6rem
+
+			&:nth-last-child(2)
+				height: auto
+				min-height: 6rem
+
+			&:last-child
+				width: 100%
+				height: 3rem
+
+			label
+				position: absolute
+				left: 0
+				top: .5rem
+				font-size: 1.2rem
+				margin-left: .8rem
+				filter: brightness(.7)
+				transition: top .3s ease
+
+			input, textarea
+				width: 100%
+				height: 100%
+				background: transparent
+				box-shadow: none
+				border: none
+				outline: none
+				padding: 2rem .8rem .5rem .8rem
+				font-size: 1.2rem
+				font-weight: 300
+				color: $color-primary-light
+				border-bottom: thin solid $color-primary-light
+
+				&:placeholder-shown + label
+					top: 3rem
+
+			textarea
+				resize: none !important
+				padding-top: 3rem !important
+
+	button[type="submit"]
+		background-color: $color-primary-light-highlight
+		border: none
+		display: flex
+		width: 100%
+		height: 100%
+		text-align: center
+		justify-content: center
+		align-items: center
+		font-size: 1rem
+		letter-spacing: 1px
+		text-transform: uppercase
+		transition: background-color .3s ease-in-out
+
+		&:hover
+			background-color: #FFE9A1
+
+		svg
+			width: auto
+			height: 1.5rem
+			margin-right: .5rem
+
+@media (max-width: 1800px)
+	.services .service-box
+		width: 350px
+		height: 500px
+		padding: 6rem
+
+@media (max-width: 1300px)
+	.services .service-box
+		width: 300px
+		height: 400px
+		padding: 6rem
+
+@media (max-width: 1150px)
+	.services .service-box
+		width: 250px
+		height: 300px
+		padding: 5rem
+
+		h2
+			font-size: 1.5rem
+
+@media (max-width: 1000px)
+	.services
+		.container
+			gap: 2rem
+		.service-box
+			width: calc( 50% - 2rem )
+			height: auto
+			padding: 7rem
+
+@media (max-width: 700px)
+
+	h2
+		font-size: 1rem
+		font-weight: 600
+		letter-spacing: 1px
+		margin-bottom: .3rem
+
+	p
+		font-size: .8rem
+		font-weight: 300
+		letter-spacing: 1px
+		text-align: justify
+
+	#services
+		padding: 1.5rem
+		.container
+			gap: 2rem
+		.service-box
+			width: 100%
+			height: auto
+			max-height: 50vh
+			// padding: 6rem
+
+			svg
+				max-width: 60%
+	#about
+		min-height: 100%
+		display: flex
+		flex-direction: column
+
+		article
+			padding: 1.5rem
+			width: 100%
+
+		.img-about
+			width: 100%
+			height: 30vh
+	#info
+		min-height: 100%
+		padding: 1.5rem
+		grid-template-columns: 1fr
+		grid-template-rows: max-content
+
+		ul
+			margin-top: .75rem
+
+			li
+				margin-top: .75rem
+				margin-left: .75rem
+				font-size: .8rem
+
+		h2:last-of-type
+			font-size: .8rem
+	#contact
+		min-height: 100%
+		padding: 1.5rem
+		row-gap: 0
+
+		.action
+			gap: .5rem
+			flex-wrap: wrap !important
+
+			button
+				padding: .5rem
+				filter: none
+
+			img
+				width: 2rem
+				height: 2rem
+
+		form
+
+			> div
+				margin-bottom: .5rem
+				height: 4rem
+
+				&:nth-last-child(2)
+					min-height: 4rem
+
+				&:last-child
+					height: 2rem
+
+				label
+					left: 0
+					top: .5rem
+					font-size: .8rem
+					margin-left: .5rem
+
+				input, textarea
+					padding: 1.5rem .5rem .3rem .5rem
+					font-size: .8rem
+
+					&:placeholder-shown + label
+						top: 2rem
+
+				textarea
+					padding-top: 2rem !important
+
+		button[type="submit"]
+			font-size: .8rem
+			svg
+				height: 1.2rem
+				margin-left: .5rem
